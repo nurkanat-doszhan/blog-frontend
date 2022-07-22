@@ -1,0 +1,17 @@
+.desc {
+    height: 48px;
+    overflow: hidden;
+}
+
+h5 {
+    height: 25px;
+    overflow: hidden;
+}
+
+.post {
+    transition: .2s;
+}
+
+.post:hover {
+    box-shadow: 0 0 8px #aaa !important;
+}
