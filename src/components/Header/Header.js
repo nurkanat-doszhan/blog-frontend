@@ -12,7 +12,7 @@ const Header = () => {
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNav">
-                    <ul className="navbar-nav">
+                    <ul className="navbar-nav me-lg-auto">
                         <li className="nav-item">
                             <NavLink className="nav-link" to="/">Home</NavLink>
                         </li>
@@ -23,13 +23,13 @@ const Header = () => {
                             <NavLink className="nav-link" to="/add-post">Add post</NavLink>
                         </li>
                     </ul>
-                </div>
-                <div className="col-md-3 text-end">
-                    <NavLink to="/login" className="btn btn-outline-primary me-2">Login</NavLink>
-                    <NavLink to="/sign-up" className="btn btn-outline-primary">Sign-up</NavLink>
+                    <div className="col-md-3 text-lg-end">
+                        <NavLink to="/login" className="btn mt-2 d-block d-md-inline-block btn-outline-primary me-2">Login</NavLink>
+                        <NavLink to="/sign-up" className="btn mt-2 d-block d-md-inline-block btn-outline-success">Sign-up</NavLink>
+                    </div>
                 </div>
             </div>
-            </nav>
+        </nav>
     )
 }
 

@@ -1,25 +1,36 @@
 import { useEffect, useState } from "react";
+import axios from 'axios'
 
 const Login = () => {
-    let [data, setData] = useState([{login: '', pass: ''}]);
+    let [data, setData] = useState([{login: '', password: ''}]);
 
-    useEffect(() => {
-        fetch('http://localhost:5000/login')
-        .then(res => res.json())
-        .then(
-            (result) => {
-                console.log(result)
-            }, (error) => {
-                console.log(error)
-            }
-        )
-    })
+    // useEffect(() => {
+    //     axios.post('/get-user', {
+    //         userName: "Joseph"
+    //     }).then((response) => {
+    //         console.log(response.data)
+    //     })
+    //     .catch((err) => {
+    //         console.log(err)
+    //     })
+
+        // axios.post('http://localhost:5000/login', {
+        //     login: 'Lofo',
+        //     password: 'laka'
+        // })
+        // .then((response) => {
+        //     console.log(response.statusText)
+        // })
+        // .catch((err) => {
+        //     console.log(err)
+        // })
+    // })
 
     const change = (e) => {
         if (e.target.id === "login") {
             data.login = e.target.value
         } else if (e.target.id === "password") {
-            data.pass = e.target.value
+            data.password = e.target.value
         }
     }
     
@@ -30,7 +41,13 @@ const Login = () => {
         //     console.log(res.bodyUsed)
         //     alert('Loso')
         // }).catch(error => console.error(error));
+        axios.post('http://localhost:5000/login').then((response) => {
+            console.log(response.status)
+        }).catch((err) => {
+            console.log(err)
+        })
     }
+
     return (
         <>
             <h1 className='text-center mb-5 mt-4'>Login</h1>
